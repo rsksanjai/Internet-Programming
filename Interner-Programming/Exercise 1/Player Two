@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Kapil Dev</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2><div>ABOUT</div></h2>
+        <div>Kapil Dev Nikhanj is an Indian former cricketer. One of the greatest all-rounders in the history of cricket, he was a fast-medium bowler and a hard-hitting middle-order batsman. Dev is the only player in the history of cricket to have taken more than 400 wickets and scored more than 5,000 runs in Test.</div>
+        <h2><div>ACHIEVEMENTS</div></h2>
+        <div>1979 – Arjuna Award<br>
+            1982 – Padma Shri<br> 
+            1983 – Wisden Cricketer of the Year<br>
+            1991 – Padma Bhushan[<br>
+            2002 – Wisden Indian Cricketer of the Century<br>
+            2010 – ICC Cricket Hall of Fame<br>
+            2013 – The 25 Greatest Global Living Legends in India by NDTV<br>
+            2013 – CK Nayudu Lifetime Achievement award<br>
+            2019 – Bharat Gaurav Award<br></div>
+    </body>
+</html>
