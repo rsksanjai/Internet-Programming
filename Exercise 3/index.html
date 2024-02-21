@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madurai Tourism</title>
+    <!-- Internal CSS -->
+    <style>
+        /* External CSS */
+        @import url('styles.css');
+
+        /* Inline CSS */
+        #website-name {
+            text-align: center;
+            font-size: 32px;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        #signup-login {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        #description {
+            font-family: Arial, sans-serif;
+            color: #666;
+            text-align: center;
+        }
+
+        /* Animation */
+        @keyframes slide {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+        #services {
+            position: fixed;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: slide 5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="website-name">Madurai Tourism</h1>
+    <a href="#" id="signup-login">Signup/Login</a>
+    <p id="description">Madurai, the cultural capital of Tamil Nadu, is renowned for its rich heritage and history.</p>
+    <table border="1" align="center">
+        <tr>
+            <td><img src="destination1.jpg" alt="Destination 1"></td>
+            <td><img src="destination2.jpg" alt="Destination 2"></td>
+            <!-- Add more destinations as needed -->
+        </tr>
+    </table>
+    <div id="fixed-image">
+        <img src="fixed-image.jpg" alt="Fixed Image" onclick="showForm()">
+    </div>
+    <div id="form-container" style="display: none;">
+        <form>
+            <fieldset>
+                <legend>Personal Details</legend>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="address">Address:</label><br>
+                <input type="text" id="address" name="address"><br>
+                <label for="preferences">Preferences:</label><br>
+                <input type="text" id="preferences" name="preferences"><br><br>
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+    </div>
+    <div id="services">
+        <img src="service1.jpg" alt="Service 1">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
