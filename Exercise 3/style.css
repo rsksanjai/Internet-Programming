@@ -1,0 +1,102 @@
+/* styles.css */
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation */
+#signup-login {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Description */
+#description {
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Tourist Destinations */
+table {
+    width: 80%;
+    margin: 0 auto;
+}
+
+table img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Fixed Image */
+#fixed-image {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+#fixed-image img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+/* Form Container */
+#form-container {
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+#form-container legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#form-container input[type="text"],
+#form-container input[type="submit"] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+#form-container input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Services */
+#services {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: slide 5s infinite;
+}
+
+@keyframes slide {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+#services img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
