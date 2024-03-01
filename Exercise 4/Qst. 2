@@ -1,0 +1,8 @@
+function removeFalsyValuesFromArray(arr) {
+    const falsyValues = [null, 0, "", false, undefined, NaN];
+    const result = arr.filter(item => !falsyValues.includes(item));
+    return result;
+}
+const sampleArray = [NaN, 0, 15, false, -22, '', undefined, 47, null];
+const resultArray = removeFalsyValuesFromArray(sampleArray);
+console.log("Expected result:", resultArray);
