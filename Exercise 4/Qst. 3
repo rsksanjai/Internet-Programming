@@ -1,0 +1,39 @@
+function findMostFrequentWord(str) {
+    // Split the string into an array of words
+    const words = str.split(/\s+/);
+    
+    // Create an object to store word frequencies
+    const wordFrequency = {};
+    
+    // Iterate over the words array to count frequencies
+    words.forEach(word => {
+        // Convert word to lowercase to handle case sensitivity
+        const lowercaseWord = word.toLowerCase();
+        
+        // If word already exists in the wordFrequency object, increment its count
+        if (wordFrequency[lowercaseWord]) {
+            wordFrequency[lowercaseWord]++;
+        } else { // Otherwise, initialize its count to 1
+            wordFrequency[lowercaseWord] = 1;
+        }
+    });
+    
+    // Find the word with the highest frequency
+    let mostFrequentWord = '';
+    let highestFrequency = 0;
+    for (const word in wordFrequency) {
+        if (wordFrequency[word] > highestFrequency) {
+            mostFrequentWord = word;
+            highestFrequency = wordFrequency[word];
+        }
+    }
+    
+    return mostFrequentWord;
+}
+
+// Example string
+const inputString = "the quick brown fox jumps over the lazy dog the the the";
+
+// Find the most frequent word
+const mostFrequent = findMostFrequentWord(inputString);
+console.log("Most frequent word:", mostFrequent);
