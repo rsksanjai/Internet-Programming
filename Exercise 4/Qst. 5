@@ -1,0 +1,13 @@
+function createNewString(str) {
+    if (str.length >= 3) {
+        const firstThree = str.substring(0, 3);
+        const lastThree = str.substring(str.length - 3);
+        const newString = firstThree + lastThree;
+        return newString;
+    } else {
+        return str;
+    }
+}
+console.log(createNewString("abcdef")); // Output: "abcdef"
+console.log(createNewString("hello"));  // Output: "helo"
+console.log(createNewString("ab"));     // Output: "ab"
