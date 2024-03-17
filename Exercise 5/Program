@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+        body {
+            background-color: #ba115f; 
+        }
+        .error {
+            background-color: #ba115f; 
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var name = document.forms["myForm"]["name"].value;
+            var email = document.forms["myForm"]["email"].value;
+            var password = document.forms["myForm"]["password"].value;
+            var phone = document.forms["myForm"]["phone"].value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var language = document.forms["myForm"]["language"].value;
+            var zip = document.forms["myForm"]["zip"].value;
+            var about = document.forms["myForm"]["about"].value;
+            var isValid = true;
+
+            if (name === "" || email === "" || password === "" || phone === "" || !gender || language === "" || zip === "" || about === "") {
+                alert("All fields must be filled out");
+                isValid = false;
+            }
+
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert("Email must be in valid form");
+                isValid = false;
+            }
+            var phonePattern = /^\d{10}$/;
+            if (!phonePattern.test(phone)) {
+                alert("Phone number must be 10 digits");
+                isValid = false;
+            }
+
+            var zipPattern = /^\d{6}$/;
+            if (!zipPattern.test(zip)) {
+                alert("Zip code must be 6 digits");
+                isValid = false;
+            }
+
+            if (!isValid) {
+                document.body.classList.add("error");
+            } else {
+                document.body.classList.remove("error");
+            }
+
+            return isValid;
+        }
+    </script>
+</head>
+<body>
+<center>
+    <form name="myForm" onsubmit="return validateForm()" method="post">
+        Name: <input type="text" name="name"><br>
+        Email: <input type="text" name="email"><br>
+        Password: <input type="password" name="password"><br>
+        Phone: <input type="text" name="phone"><br>
+        Gender: 
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="Other"> Other
+        <br>
+        Language: 
+        <select name="language">
+            <option value="">Select</option>
+            <option value="english">English</option>
+            <option value="spanish">Spanish</option>
+            <option value="french">French</option>
+        </select><br>
+        Zip Code: <input type="text" name="zip"><br>
+        About: <textarea name="about"></textarea><br>
+        <input type="submit" value="Register">
+    </form>
+</center>
+</body>
+</html>
