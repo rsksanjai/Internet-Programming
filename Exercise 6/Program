@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+<title>Add to List Example</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+  #list-container {
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+<div>
+  <label for="item-input">Enter an item:</label>
+  <input type="text" id="item-input">
+  <button id="add-btn">Add to List</button>
+</div>
+<div id="list-container">
+  <ul id="item-list"></ul>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#add-btn').click(function() {
+      var newItem = $('#item-input').val();
+      if (newItem.trim() === '') {
+        alert('Please enter a value.');
+        return;
+      }
+      $('#item-list').append('<li>' + newItem + '</li>');
+      $('#item-input').val('');
+    });
+  });
+</script>
+</body>
+</html>
