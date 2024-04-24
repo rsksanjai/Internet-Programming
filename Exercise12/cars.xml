@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cars>
+    <car>
+        <image>img/download3.jpg</image>
+        <make>Dodge Challenger</make>
+        <model>SRT Hellcat</model>
+        <year>2015</year>
+        <color>Red</color>
+        <price>$92,895</price>
+    </car>
+    <car>
+        <image>img/download2.jpg</image>
+        <make>Bugatti</make>
+        <model>Chiron</model>
+        <year>2004</year>
+        <color>Silver Blue</color>
+        <price>$3.6 Million</price>
+    </car>
+    <car>
+        <image>img/download.jpg</image>
+        <make>Rolls Royce</make>
+        <model>Ghost</model>
+        <year>2022</year>
+        <color>Phantom Blue</color>
+        <price>$416,250</price>
+    </car>
+</cars>
