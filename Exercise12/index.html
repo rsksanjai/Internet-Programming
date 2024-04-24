@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Gallery</title>
+  <style>
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .car {
+      width: 30%;
+      margin: 10px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .car:hover {
+      background-color: #f0f0f0;
+    }
+    .car img {
+      max-width: 100%;
+      height: auto;
+    }
+    #car-details {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="gallery" id="car-gallery"></div>
+  <div id="car-details"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // Function to display car details
+    function displayCarDetails(car) {
+      var detailsDiv = $('#car-details');
+      detailsDiv.html(`
+        <h2>${car.find("make").text()} ${car.find("model").text()}</h2>
+        <p>Year: ${car.find("year").text()}</p>
+        <p>Color: ${car.find("color").text()}</p>
+        <p>Price: ${car.find("price").text()}</p>
+      `);
+    }
+
+    // Function to create gallery from XML data
+    function createGallery(xml) {
+      var galleryDiv = $('#car-gallery');
+      var cars = $(xml).find("car");
+      cars.each(function() {
+        var car = $(this);
+        var make = car.find("make").text();
+        var model = car.find("model").text();
+        var year = car.find("year").text();
+        var color = car.find("color").text();
+        var imageSrc = car.find("image").text(); // Assuming there's an <image> tag in your XML
+
+        var carDiv = $('<div class="car">').html(`
+          <img src="${imageSrc}" alt="${make} ${model}">
+          <h3>${make} ${model}</h3>
+        `);
+        carDiv.click(function() {
+          displayCarDetails(car);
+        });
+        galleryDiv.append(carDiv);
+      });
+    }
+
+    // Load XML file and create gallery
+    $.ajax({
+      type: "GET",
+      url: "cars.xml",
+      dataType: "xml",
+      success: function(xml) {
+        createGallery(xml);
+      }
+    });
+  </script>
+</body>
+</html>
