@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Sachin</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2><div>ABOUT</div></h2>
+        <div>Sachin Ramesh Tendulkar, is an Indian former international cricketer who captained the Indian national team. He is widely regarded as one of the greatest batsmen in the history of cricket.</div>
+        <h2><div>ACHIEVEMENTS</div></h2>
+        <div>1994 – Arjuna Award, by the Government of India in recognition of his outstanding achievement in sports.<br>
+            1997 – Khel Ratna Award, India's highest honour given for achievement in sports.<br>
+            1999 –  Padma Shri, India's fourth-highest civilian award.<br>
+            2001 – Maharashtra Bhushan Award, Maharashtra state's highest civilian award.<br>
+            2008 –  Padma Vibhushan, India's second-highest civilian award.<br>
+            2014 –  Bharat Ratna, India's highest civilian award.<br></div>
+    </body>
+</html>
