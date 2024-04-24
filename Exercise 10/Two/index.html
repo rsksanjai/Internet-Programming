@@ -1,0 +1,38 @@
+<?php
+function binaryToDecimal($binary) {
+    $decimal = 0;
+    $power = 0;
+    for ($i = strlen($binary) - 1; $i >= 0; $i--) {
+    
+        $digit = intval($binary[$i]);
+        $decimal += $digit * pow(2, $power);
+        $power++;
+    }
+        return $decimal;
+}
+$binaryNumber = "";
+$decimalEquivalent = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $binaryNumber = $_POST["binary"];
+    $decimalEquivalent = binaryToDecimal($binaryNumber);
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Binary to Decimal Converter</title>
+</head>
+<body>
+    <h2>Binary to Decimal Converter</h2>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <label for="binary">Enter a binary number:</label><br>
+        <input type="text" id="binary" name="binary" value="<?php echo $binaryNumber; ?>"><br><br>
+        <input type="submit" value="Convert">
+    </form>
+    <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
+    <p>Binary Number: <?php echo $binaryNumber; ?></p>
+    <p>Decimal Equivalent: <?php echo $decimalEquivalent; ?></p>
+    <?php endif; ?>
+</body>
+</html>
