@@ -1,0 +1,50 @@
+<?php
+function checkPasswordStrength($password) {
+    $errors = [];
+    if (strlen($password) < 8) {
+        $errors[] = "Password should be at least 8 characters long.";
+    }
+    if (!preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $password)) {
+        $errors[] = "Password should contain at least one special character.";
+    }
+    if (!preg_match('/[A-Z]/', $password)) {
+        $errors[] = "Password should contain at least one uppercase letter.";
+    }
+    if (!preg_match('/[a-z]/', $password)) {
+        $errors[] = "Password should contain at least one lowercase letter.";
+    }
+    if (!preg_match('/[0-9]/', $password)) {
+        $errors[] = "Password should contain at least one number.";
+    }
+
+    return $errors;
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $password = $_POST["password"];
+    $errors = checkPasswordStrength($password);
+
+    if (empty($errors)) {
+        echo "Password is strong!";
+    } else {
+        foreach ($errors as $error) {
+            echo $error . "<br>";
+        }
+    }
+}
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Strength Checker</title>
+</head>
+<body>
+    <h2>Password Strength Checker</h2>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <label for="password">Enter your password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <input type="submit" value="Check Strength">
+    </form>
+</body>
+</html>
